@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* ARIA Architecture Studio Design System
+   Elegant, modern, sophisticated color palette with earth tones
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Warm Earth Tones */
+    --background: 45 20% 97%;
+    --foreground: 25 25% 15%;
+    
+    /* Sand & Stone */
+    --sand: 42 35% 88%;
+    --sand-foreground: 25 25% 15%;
+    
+    /* Terracotta & Clay */
+    --terracotta: 15 45% 62%;
+    --terracotta-foreground: 0 0% 100%;
+    
+    /* Deep Forest */
+    --forest: 160 30% 25%;
+    --forest-foreground: 0 0% 100%;
+    
+    /* Warm Stone */
+    --stone: 30 15% 35%;
+    --stone-foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 45 20% 97%;
+    --card-foreground: 25 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 45 20% 97%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 160 30% 25%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 42 35% 88%;
+    --secondary-foreground: 25 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 20% 92%;
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 15 45% 62%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 20% 85%;
+    --input: 42 20% 85%;
+    --ring: 160 30% 25%;
 
-    --radius: 0.5rem;
+    /* Design System Enhancements */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--forest)), hsl(var(--stone)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--terracotta)), hsl(15 55% 72%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--sand)));
+    
+    /* Shadows */
+    --shadow-elegant: 0 20px 60px -20px hsl(var(--forest) / 0.2);
+    --shadow-card: 0 8px 30px -8px hsl(var(--forest) / 0.1);
+    --shadow-button: 0 4px 20px -4px hsl(var(--terracotta) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +87,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 15% 8%;
+    --foreground: 45 20% 95%;
+    
+    --sand: 42 15% 15%;
+    --sand-foreground: 45 20% 95%;
+    
+    --terracotta: 15 35% 45%;
+    --terracotta-foreground: 0 0% 100%;
+    
+    --forest: 160 20% 35%;
+    --forest-foreground: 0 0% 100%;
+    
+    --stone: 30 10% 20%;
+    --stone-foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 15% 8%;
+    --card-foreground: 45 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 15% 8%;
+    --popover-foreground: 45 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 160 20% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 42 15% 15%;
+    --secondary-foreground: 45 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 10% 12%;
+    --muted-foreground: 45 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 15 35% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 55% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 25 10% 18%;
+    --input: 25 10% 18%;
+    --ring: 160 20% 35%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--forest)), hsl(var(--stone)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--terracotta)), hsl(15 45% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--sand)));
+    
+    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.3);
+    --shadow-button: 0 4px 20px -4px hsl(var(--terracotta) / 0.4);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +152,81 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Typography Enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--forest));
+  }
+}
+
+@layer components {
+  /* Hero Text Styles */
+  .hero-title {
+    @apply text-5xl md:text-7xl font-serif font-bold leading-tight tracking-tight;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-muted-foreground font-light leading-relaxed;
+  }
+  
+  /* Card Styles */
+  .glass-card {
+    @apply backdrop-blur-sm bg-background/80 border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Button Animations */
+  .button-hover {
+    @apply transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg;
+    transition: var(--transition-smooth);
+  }
+  
+  /* Geometric Shapes */
+  .geometric-shape {
+    @apply absolute opacity-10 pointer-events-none;
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Parallax Effect */
+  .parallax {
+    will-change: transform;
   }
 }
