@@ -8,44 +8,56 @@ const projects = [
   {
     id: 1,
     title: "Harmony Residence",
-    category: "Residential",
-    location: "Copenhagen, Denmark",
+    category: "Жилая архитектура",
+    location: "Копенгаген, Дания",
     year: "2023",
     image: project1,
-    description: "A sustainable family home that seamlessly blends modern design with natural materials.",
+    description: "Устойчивый семейный дом, который гармонично сочетает современный дизайн с натуральными материалами.",
+    area: "280 м²",
+    price: "€750K"
   },
   {
     id: 2,
     title: "Verde Office Complex",
-    category: "Commercial",
-    location: "Amsterdam, Netherlands", 
+    category: "Коммерческая архитектура",
+    location: "Амстердам, Нидерланды", 
     year: "2023",
     image: project2,
-    description: "An innovative workspace featuring green terraces and energy-efficient systems.",
+    description: "Инновационное рабочее пространство с зелеными террасами и энергоэффективными системами.",
+    area: "1,200 м²",
+    price: "€2.1M"
   },
   {
     id: 3,
     title: "Serenity Villa",
-    category: "Residential",
-    location: "Mallorca, Spain",
+    category: "Жилая архитектура",
+    location: "Майорка, Испания",
     year: "2022",
     image: project3,
-    description: "A luxury retreat that maximizes natural light and ocean views through thoughtful design.",
+    description: "Роскошное убежище, максимизирующее естественное освещение и виды на океан.",
+    area: "350 м²",
+    price: "€1.2M"
   },
 ]
 
 export const Portfolio = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="portfolio" className="py-24 bg-background relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-hero opacity-5 rounded-full translate-y-48 translate-x-48 blur-3xl"></div>
+      
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-            Featured
-            <span className="text-terracotta"> Projects</span>
+        <div className="text-center mb-20">
+          <div className="inline-block bg-forest/10 border border-forest/20 rounded-full px-6 py-2 mb-6 text-forest font-medium">
+            Наши работы
+          </div>
+          <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-6">
+            Избранные
+            <span className="text-terracotta"> проекты</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our latest architectural achievements that showcase our commitment to innovative design and sustainable living.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Исследуйте наши последние архитектурные достижения, демонстрирующие наш подход к инновационному дизайну и устойчивому образу жизни.
           </p>
         </div>
 
@@ -64,9 +76,15 @@ export const Portfolio = () => {
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-4 right-4 bg-terracotta text-white px-3 py-1 rounded-full text-sm font-medium">
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-4 left-4 bg-terracotta text-white px-3 py-1 rounded-full text-sm font-medium">
                   {project.category}
+                </div>
+                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                  {project.area}
+                </div>
+                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-white font-bold text-lg">{project.price}</div>
                 </div>
               </div>
 
@@ -93,9 +111,9 @@ export const Portfolio = () => {
 
                 <Button 
                   variant="ghost" 
-                  className="w-full group-hover:bg-terracotta group-hover:text-white transition-all duration-300"
+                  className="w-full group-hover:bg-terracotta group-hover:text-white transition-all duration-300 font-medium"
                 >
-                  View Project
+                  Смотреть проект
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </div>
@@ -106,7 +124,7 @@ export const Portfolio = () => {
         {/* View All Button */}
         <div className="text-center">
           <Button variant="forest" size="lg" className="button-hover">
-            View All Projects
+            Все проекты
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>

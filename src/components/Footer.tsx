@@ -25,22 +25,22 @@ export const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-forest-foreground/80">
-              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Architectural Design</a></li>
-              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Interior Design</a></li>
-              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Urban Planning</a></li>
-              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Sustainability Consulting</a></li>
-              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Project Management</a></li>
+            <h4 className="font-semibold mb-4 text-lg">Услуги</h4>
+            <ul className="space-y-3 text-forest-foreground/80">
+              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Архитектурное проектирование</a></li>
+              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Дизайн интерьеров</a></li>
+              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Городское планирование</a></li>
+              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Экологический консалтинг</a></li>
+              <li><a href="#" className="hover:text-terracotta transition-colors duration-300">Управление проектами</a></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-forest-foreground/80">
+            <h4 className="font-semibold mb-4 text-lg">Контакты</h4>
+            <ul className="space-y-3 text-forest-foreground/80">
               <li>Nørrebrogade 45</li>
-              <li>2200 Copenhagen, Denmark</li>
+              <li>2200 Копенгаген, Дания</li>
               <li><a href="tel:+4533123456" className="hover:text-terracotta transition-colors duration-300">+45 33 12 34 56</a></li>
               <li><a href="mailto:hello@aria-architecture.com" className="hover:text-terracotta transition-colors duration-300">hello@aria-architecture.com</a></li>
             </ul>
@@ -52,9 +52,9 @@ export const Footer = () => {
             © 2024 ARIA Architecture Studio. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-forest-foreground/60 mt-4 md:mt-0">
-            <a href="#" className="hover:text-terracotta transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-terracotta transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="hover:text-terracotta transition-colors duration-300">Cookies</a>
+            <a href="#" className="hover:text-terracotta transition-colors duration-300">Политика конфиденциальности</a>
+            <a href="#" className="hover:text-terracotta transition-colors duration-300">Условия использования</a>
+            <a href="#" className="hover:text-terracotta transition-colors duration-300">Файлы cookie</a>
           </div>
         </div>
       </div>

@@ -7,110 +7,117 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react"
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email",
+    title: "Электронная почта",
     details: "hello@aria-architecture.com",
-    subtitle: "We'll respond within 24 hours"
+    subtitle: "Ответим в течение 24 часов"
   },
   {
     icon: Phone,
-    title: "Phone",
+    title: "Телефон",
     details: "+45 33 12 34 56",
-    subtitle: "Mon-Fri 9:00-18:00 CET"
+    subtitle: "Пн-Пт 9:00-18:00 CET"
   },
   {
     icon: MapPin,
-    title: "Studio",
-    details: "Nørrebrogade 45, Copenhagen",
-    subtitle: "Visit by appointment"
+    title: "Студия",
+    details: "Nørrebrogade 45, Копенгаген",
+    subtitle: "Посещение по записи"
   },
   {
     icon: Clock,
-    title: "Consultation",
-    details: "Free 30-min session",
-    subtitle: "Discuss your project with us"
+    title: "Консультация",
+    details: "Бесплатная 30-мин сессия",
+    subtitle: "Обсудите проект с нами"
   }
 ]
 
 export const Contact = () => {
   return (
-    <section className="py-24 bg-gradient-subtle">
+    <section id="contact" className="py-24 bg-gradient-subtle relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-accent opacity-5 rounded-full -translate-y-40 -translate-x-40 blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-hero opacity-5 rounded-full translate-y-48 translate-x-48 blur-3xl"></div>
+
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-            Let's Create Something
-            <span className="text-terracotta block">Extraordinary Together</span>
+        <div className="text-center mb-20">
+          <div className="inline-block bg-terracotta/10 border border-terracotta/20 rounded-full px-6 py-2 mb-6 text-terracotta font-medium">
+            Связаться с нами
+          </div>
+          <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-6">
+            Создадим что-то
+            <span className="text-terracotta block">невероятное вместе</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your vision into reality? Get in touch with our team and let's discuss your next architectural project.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Готовы воплотить ваше видение в реальность? Свяжитесь с нашей командой и давайте обсудим ваш следующий архитектурный проект.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="glass-card p-8">
-            <h3 className="text-2xl font-serif font-semibold text-foreground mb-6">
-              Tell Us About Your Project
+          <div className="glass-card p-8 rounded-2xl">
+            <h3 className="text-2xl font-serif font-semibold text-foreground mb-8">
+              Расскажите о вашем проекте
             </h3>
             
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    First Name
+                    Имя
                   </label>
                   <Input 
-                    placeholder="John" 
-                    className="bg-background/50 border-border/50 focus:border-terracotta"
+                    placeholder="Иван" 
+                    className="bg-background/50 border-border/50 focus:border-terracotta h-12"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Last Name
+                    Фамилия
                   </label>
                   <Input 
-                    placeholder="Doe" 
-                    className="bg-background/50 border-border/50 focus:border-terracotta"
+                    placeholder="Петров" 
+                    className="bg-background/50 border-border/50 focus:border-terracotta h-12"
                   />
                 </div>
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Email
+                  Электронная почта
                 </label>
                 <Input 
                   type="email" 
-                  placeholder="john@example.com" 
-                  className="bg-background/50 border-border/50 focus:border-terracotta"
+                  placeholder="ivan@example.com" 
+                  className="bg-background/50 border-border/50 focus:border-terracotta h-12"
                 />
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Project Type
+                  Тип проекта
                 </label>
-                <select className="w-full h-10 px-3 py-2 bg-background/50 border border-border/50 rounded-lg focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20">
-                  <option>Residential</option>
-                  <option>Commercial</option>
-                  <option>Renovation</option>
-                  <option>Consultation</option>
+                <select className="w-full h-12 px-4 py-3 bg-background/50 border border-border/50 rounded-lg focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 text-foreground">
+                  <option>Жилая архитектура</option>
+                  <option>Коммерческая архитектура</option>
+                  <option>Реновация</option>
+                  <option>Консультация</option>
                 </select>
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Project Description
+                  Описание проекта
                 </label>
                 <Textarea 
-                  placeholder="Tell us about your vision, requirements, and any specific details..."
-                  rows={4}
+                  placeholder="Расскажите о вашем видении, требованиях и любых конкретных деталях..."
+                  rows={5}
                   className="bg-background/50 border-border/50 focus:border-terracotta resize-none"
                 />
               </div>
               
-              <Button variant="terracotta" size="lg" className="w-full button-hover">
-                Send Message
+              <Button variant="terracotta" size="lg" className="w-full button-hover h-12 text-lg">
+                Отправить сообщение
               </Button>
             </form>
           </div>
@@ -141,17 +148,17 @@ export const Contact = () => {
             ))}
             
             {/* Additional Info */}
-            <div className="glass-card p-6 text-center">
-              <h4 className="text-lg font-semibold text-foreground mb-3">
-                Follow Our Journey
+            <div className="glass-card p-8 text-center rounded-2xl">
+              <h4 className="text-xl font-semibold text-foreground mb-4">
+                Следите за нашими работами
               </h4>
-              <p className="text-muted-foreground mb-4">
-                Stay updated with our latest projects and architectural insights.
+              <p className="text-muted-foreground mb-6">
+                Будьте в курсе наших последних проектов и архитектурных инсайтов.
               </p>
-              <div className="flex justify-center gap-4">
-                <Button variant="outline" size="sm">Instagram</Button>
-                <Button variant="outline" size="sm">LinkedIn</Button>
-                <Button variant="outline" size="sm">Behance</Button>
+              <div className="flex justify-center gap-3">
+                <Button variant="outline" size="sm" className="hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-300">Instagram</Button>
+                <Button variant="outline" size="sm" className="hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-300">LinkedIn</Button>
+                <Button variant="outline" size="sm" className="hover:bg-terracotta hover:text-white hover:border-terracotta transition-all duration-300">Behance</Button>
               </div>
             </div>
           </div>
